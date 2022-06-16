@@ -1,21 +1,19 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { data } from "./data";
 
 function App() {
-  console.log(data.data.map((team) => team));
   return (
     <div className="App">
       <h1>Premier League Football Teams</h1>
       <div className="container">
         {data.data.map((team) => (
-          <div class="box">
-            <div class="imgBox">
-              <img src={team.image} />
+          <div className="box" key={team.name}>
+            <div className="imgBox">
+              <img src={team.image} alt={team.name} />
             </div>
-            <div class="content">
+            <div className="content">
               <h2>
-                <a href={team.url} target="_blank">
+                <a href={team.url} rel="noreferrer" target="_blank">
                   {team.name}
                 </a>
               </h2>
